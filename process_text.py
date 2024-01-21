@@ -12,7 +12,7 @@ def return_embeddings(
     input_type_embed="search_document",
     model_name="embed-english-v3.0",
 ) -> np.array:
-    cohere_api_key = os.environ.get("cohere_api_key")
+    cohere_api_key = os.environ.get("COHERE_API_TOKEN")
     co = cohere.Client(cohere_api_key)
     embeddings = co.embed(
         texts=clean_text, model=model_name, input_type=input_type_embed
@@ -55,7 +55,7 @@ def return_patent(patent_number: str) -> pd.DataFrame:
 
 
 def summarize(text: str, prompt: str = "") -> str:
-    cohere_api_key = os.environ.get("cohere_api_key")
+    cohere_api_key = os.environ.get("COHERE_API_TOKEN")
     co = cohere.Client(cohere_api_key)
     response = co.summarize(
         text=text,
