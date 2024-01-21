@@ -1,6 +1,4 @@
 import streamlit as st
-from streamlit_pdf_viewer import pdf_viewer
-from streamlit_javascript import st_javascript
 from process_text import return_most_relevant_passage, return_summary, return_patent
 from bs4 import BeautifulSoup
 import requests
