@@ -20,7 +20,7 @@ import requests
 #     return embeddings
 
 
-def download_patent_text(patent_url: str) -> pd.DataFrame | None:
+def download_patent_text(patent_url: str)
     # Send a GET request to the patent URL
     response = requests.get(patent_url)
 
