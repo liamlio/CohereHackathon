@@ -22,7 +22,6 @@ with st.sidebar:
         patent_number = patent_number_selected.split(" ")[0]
     elif patent_number_submit:
         patent_number = patent_number_new
-    if patent_number:
         
     # st.write("Or a search for a patent using the search form below.")
     # with st.form("search_patent"):
