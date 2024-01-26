@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 
 st.set_page_config(layout="wide")
-
+patent_number = None
 url = "https://patents.google.com/patent/{patent_number}/en"
 with st.sidebar:
     with st.form("patent_number"):
