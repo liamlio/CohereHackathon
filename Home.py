@@ -9,17 +9,21 @@ url = "https://patents.google.com/patent/{patent_number}/en"
 with st.sidebar:
     with st.form("patent_number"):
         st.header("Input Patent Number")
-        patent_number = st.text_input("Patent Number").replace(" ", "").replace(",", "")
+        patent_number_new = st.text_input("Patent Number").replace(" ", "").replace(",", "")
         patent_number_submit = st.form_submit_button('Submit')
     st.write("Or select a default patent number from the dropdown.")
-    patent_number = st.selectbox(
+    patent_number_selected = st.selectbox(
                 "Patent Number",
                 ("US7615532B2 - Insulin derivatives", "US8961763B2 - Dual-pore device", "US777194A - Variable-speed dynamo.", "US20210008212A1 - Solid Carriers for Improved Delivery of Active Ingredients in Pharmaceutical Compositions"),
                 index=None,
                 placeholder="Select a default Patent to view.",
                 )
+    if patent_number_selected:
+        patent_number = patent_number_selected.split(" ")[0]
+    elif patent_number_submit:
+        patent_number = patent_number_new
     if patent_number:
-        patent_number = patent_number.split(" ")[0]
+        
     # st.write("Or a search for a patent using the search form below.")
     # with st.form("search_patent"):
     #     st.header("Search for a Patent")
